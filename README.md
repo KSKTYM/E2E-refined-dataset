@@ -1,13 +1,27 @@
 # E2E refined dataset
 This is an refined dataset of the [E2E dataset](https://github.com/tuetschek/e2e-dataset/releases/download/v1.0.0/e2e-dataset.zip).
 
+_Authors: Keisuke Toyama, Katsuhito Sudoh and Satoshi Nakamura_
+
+## Download Link
+https://github.com/KSKTYM/E2E-refined-dataset/release/e2e_refined_dataset_v0_9_0.zip
+
 ## Description
-The original E2E dataset is one of the most popular datasets for MR-to-text. However, the relationship betwenn the MR and the sentence is not strict so that some MR-text pairs have "deletion(the MR is not reflected in the sentence)", "substitution(the MR value is substituted in the sentence)", and/or "insertion(the MR whose value is empty is appeared in the sentence with an unintended value)" errors.
-Thus, we refined the E2E dataset by manually annotating the MR values.
+The original E2E dataset is one of the most popular datasets for MR-to-text. However, the relationship between the MR and the sentences is not strict so that some MR-text pairs have "deletion(the MR is not reflected in the sentences)", "substitution(the MR value is substituted in the sentences)", and/or "insertion(the MR whose value is empty is appeared in the sentences with an unintended value)" errors.
+Thus, we developed python programs to refine the E2E dataset.
 
-_Authors: Anonymous_
+We also developed three new MR features as follows:
+1) "order": the order of the mention of MR values in the sentences
+2) "num_sen": the number of sentences in "text"
+3) "idx_sen": the index of the sentence which includes the MR value.
 
-## Process
+## Development Environment
+- OS
+  + Ubuntu 20.04
+- Python
+  + 3.8.10
+
+## Usage
 1) download the E2E dataset
 ```
 $ ./EXE0-GET-E2E-DATASET.sh
@@ -28,32 +42,27 @@ $ ./EXE3-CORRECT-MR.sh
 ```
 $ ./EXE4-CONV-JSON2CSV.sh
 ```
-6) extend test data
+6) collect the generated dataset and pack them in zip
 ```
-$ ./EXE5-SHUFFLE-ORDER.sh
-```
-7) collect the generated dataset and pack them in zip
-```
-$ ./EXE6-MAKE-RELEASE-PACKAGE.sh
+$ ./EXE5-MAKE-RELEASE-PACKAGE.sh
 ```
 
 You can execute these process with one command as
 ```
 $ ./EXE-ALL.sh
 ```
-These programs are written in python 3.
 
 ## Citing
 If you use this dataset in your work, please cite the following papers:
 ```
-@inproceedings{(Anonymous),
-  title={(Anonymous)},
-  author={(Anonymous)},
-  booktitle={(Anonymous)},
-  address={(Anonymous)},
-  year={(Anonymous)},
-  note={(Anonymous)},
-  url={(Anonymous)},
+@inproceedings{toyama2022e2er,
+  title={E2E refined dataset},
+  author={Keisuke Toyama, Katsuhito Sudoh and Satoshi Nakamura},
+  booktitle={n/a},
+  address={Ikoma, Japan},
+  year={2022},
+  note={arxiv:221?.?????},
+  url={https://arxiv.org/abs/221?.?????},
 }
 
 @inproceedings{novikova2017e2e,
@@ -69,7 +78,7 @@ If you use this dataset in your work, please cite the following papers:
 ```
 
 ## Version
-2022/7/15   version 0.8.0 (initial version)
+2022/10/??   version 0.9.0 (initial version)
 
 ## License
 Distributed under the [Creative Common 4.0 Attribution-ShareAlike License (CC4.0-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/).

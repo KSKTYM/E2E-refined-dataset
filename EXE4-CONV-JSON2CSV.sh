@@ -1,5 +1,6 @@
 #! /bin/bash
 
+# convert json file to csv file
 mkdir -p out_csv
 python3 m_conv_json2csv.py -i out/e2e_train.json -o out_csv/trainset.csv
 python3 m_conv_json2csv.py -i out/e2e_valid.json -o out_csv/devset.csv

@@ -26,37 +26,37 @@ if __name__ == '__main__':
     for obj in a_obj_in:
         fo.write('\"')
         flag = False
-        if obj['mr']['name'] != '':
-            fo.write('name['+obj['mr']['name']+']')
+        if obj['mr']['value']['name'] != '':
+            fo.write('name['+obj['mr']['value']['name']+']')
             flag = True
-        if obj['mr']['eatType'] != '':
+        if obj['mr']['value']['eatType'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('eatType['+obj['mr']['eatType']+']')
-        if obj['mr']['food'] != '':
+            fo.write('eatType['+obj['mr']['value']['eatType']+']')
+        if obj['mr']['value']['food'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('food['+obj['mr']['food']+']')
-        if obj['mr']['priceRange'] != '':
+            fo.write('food['+obj['mr']['value']['food']+']')
+        if obj['mr']['value']['priceRange'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('priceRange['+obj['mr']['priceRange']+']')
-        if obj['mr']['customer rating'] != '':
+            fo.write('priceRange['+obj['mr']['value']['priceRange']+']')
+        if obj['mr']['value']['customer rating'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('customer rating['+obj['mr']['customer rating']+']')
-        if obj['mr']['area'] != '':
+            fo.write('customer rating['+obj['mr']['value']['customer rating']+']')
+        if obj['mr']['value']['area'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('area['+obj['mr']['area']+']')
-        if obj['mr']['familyFriendly'] != '':
+            fo.write('area['+obj['mr']['value']['area']+']')
+        if obj['mr']['value']['familyFriendly'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('familyFriendly['+obj['mr']['familyFriendly']+']')
-        if obj['mr']['near'] != '':
+            fo.write('familyFriendly['+obj['mr']['value']['familyFriendly']+']')
+        if obj['mr']['value']['near'] != '':
             if flag is True:
                 fo.write(', ')
-            fo.write('near['+obj['mr']['near']+']')
+            fo.write('near['+obj['mr']['value']['near']+']')
         fo.write('\"')
         if args.nr is False:
             fo.write(',\"')

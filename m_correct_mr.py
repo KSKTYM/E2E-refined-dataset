@@ -708,6 +708,10 @@ def extract_food(obj_new, value_list, verbose_flag, mr_old):
         obj_new['mr']['food'] = 'american'
         obj_new['reason']['food'] = ' usa.'
 
+    if (obj_new['mr']['food'] == '') and ('united states' in txt):
+        obj_new['mr']['food'] = 'american'
+        obj_new['reason']['food'] = 'united states'
+
     if ('indian' in obj_new['mr']['name']) or \
        ('indian' in obj_new['mr']['near']):
         if len(a_cand) == 1:
@@ -2265,6 +2269,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
     a_family_yes = [
         '@FAMILY@ are allowed',
         '@FAMILY@ are welcome',
+        '@FAMILY@ are always welcome',####(2022/9/24)
         '@FAMILY@ are more than welcome',
         '@FAMILY@ are very welcome',
         '@FAMILY@ atmosphere',
@@ -2299,6 +2304,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'bring your @FAMILY@',
         'caters to @FAMILY@',
         'customers and @FAMILY@ are friendly',
+        'families of all ages',#####(2022/09/24)
         'for you and the @FAMILY@',
         'for all the @FAMILY@',
         'for @FAMILY@',
@@ -2318,6 +2324,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'has @FAMILY@',
         'ideal for anyone on a @FAMILY@',
         'is very friendly place',
+        'love @FAMILY@',#####(2022/9/24)
         'offers @FAMILY@',
         'opened to all age groups',
         'place for @FAMILY@',
@@ -2331,6 +2338,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'serves @FAMILY@',
         'suitable for everyone and @FAMILY@',
         'suitable for @FAMILY@',
+        'tailoring to all ages',#####(2022/9/24)
         'welcoming @FAMILY@',
         'welcome @FAMILY@',
         'welcomes @FAMILY@',
@@ -2339,7 +2347,9 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'welcomes your whole @FAMILY@',
         'whole @FAMILY@ will enjoy',
         'with @FAMILY@',
+        'you can take your @FAMILY@',#####(2022/9/24)
         'yes to @FAMILY@',
+        'your @FAMILY@ want'#####(2022/9/24),
         'you and your family can',
         'you\'ve got @FAMILY@'
     ]
@@ -2473,6 +2483,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'for the busy adult',
         'for our adult',
         'hire a babysitter',
+        'mature',####(2022/9/24)
         'isn\'t @FAMILY@',
         'isn\'t @FAMILY@ friendly',
         'isn\'t considered @FAMILY@',
@@ -2685,7 +2696,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
     return obj_new
 
 
-# obtain MR extension (order/num_sen)
+# obtain MR extension (order/idx_sen/num_sen)
 def obtain_extension(obj):
     # order
     txt_lex = obj['txt']
@@ -2697,7 +2708,6 @@ def obtain_extension(obj):
     a_loc = {}
     for attr in obj['reason']:
         if obj['reason'][attr] != '':
-            #a_loc[attr] = obj['txt'].find(obj['reason'][attr])
             if attr == 'name':
                 a_loc[attr] = txt_lex.find('NAME')
             elif attr == 'near':
@@ -2705,7 +2715,6 @@ def obtain_extension(obj):
             else:
                 a_loc[attr] = txt_lex.find(obj['reason'][attr])
         else:
-            #a_loc[attr] = len(obj['txt'])+10
             a_loc[attr] = len(txt_lex)+10
     a_tmp = sorted(a_loc.items(), key=lambda x:x[1])
     j = 1
@@ -2714,6 +2723,25 @@ def obtain_extension(obj):
         if obj['reason'][attr] != '':
             obj['order'][attr] = j
             j += 1
+
+    # idx_sen
+    loc_sen = []
+    for j in range(len(txt_lex)):
+        if (txt_lex[j] == '.') or (txt_lex[j] == '?'):
+            loc_sen.append(j)
+    idx_sen = {}
+    for attr in obj['mr']:
+        idx_sen[attr] = 0
+        if obj['mr'][attr] != '':
+            if (attr == 'name') or (attr == 'near'):
+                loc_value = txt_lex.find(attr.upper())
+            else:
+                loc_value = txt_lex.find(obj['reason'][attr])
+            for j in range(len(loc_sen)):
+                if loc_value < loc_sen[j]:
+                    idx_sen[attr] = j+1
+                    break
+    obj['idx_sen'] = idx_sen
 
     # num_sen
     obj['num_sen'] = obj['txt'].count('.') + obj['txt'].count('?')
@@ -2849,9 +2877,7 @@ def capitalisation(a_obj_in):
         for idx in a_loc:
             txt = txt[:idx] + txt[idx].upper() + txt[idx+1:]
 
-        #if (' i ' in txt):
         txt = txt.replace(' i ', ' I ')
-        #if (' i\'' in txt):
         txt = txt.replace(' i\'', ' I\'')
 
         obj['new']['txt'] = txt
@@ -2885,15 +2911,17 @@ def dump_json(a_obj_in, fname):
         a_obj_reason.append({'org': obj['org'], 'new': obj['new']})
         if obj['new']['remarks'] != '':
             continue
-
         obj_out = {
-            'mr': obj['new']['mr'],
-            'mr_lex': obj['new']['mr_lex'],
+            'id': obj['new']['id'],
+            'mr': {
+                'value': obj['new']['mr'],
+                'value_lex': obj['new']['mr_lex'],
+                'order': obj['new']['order'],
+                'idx_sen': obj['new']['idx_sen'],
+                'num_sen': obj['new']['num_sen']
+            },
             'txt': obj['new']['txt'],
-            'txt_lex': obj['new']['txt_lex'],
-            'order': obj['new']['order'],
-            'num_sen': obj['new']['num_sen'],
-            'id': obj['new']['id']
+            'txt_lex': obj['new']['txt_lex']
         }
         a_obj_out.append(obj_out)
 

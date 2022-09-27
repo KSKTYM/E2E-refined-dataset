@@ -698,6 +698,7 @@ def filter_typo(obj, verbose_flag):
     # t-a11) correct: ', and', wrong: '. and'
     # t-a12) correct: a non-children, wrong: anon-children
     # t-a13) correct: are, wrong: . are
+    # t-a14) correct: all age, wrong: tall age
 
     # t-b1) correct: be, wrong: e
     # t-b2) correct: begin, wrong: ['of begin', 'for begin', 'as well as not begin']
@@ -1201,6 +1202,11 @@ def filter_typo(obj, verbose_flag):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('. aren\'t', ' aren\'t')
         dump_proc('(t-a13)', value_old, obj['txt'], verbose_flag)
+
+    if 'tall ages' in obj['txt']:
+        value_old = obj['txt']
+        obj['txt'] = obj['txt'].replace('tall ages', 'all ages')
+        dump_proc('(t-a14)', value_old, obj['txt'], verbose_flag)
 
     if ' e ' in obj['txt']:
         value_old = obj['txt']
@@ -2023,7 +2029,8 @@ def remove_duplication(a_obj_in):
         for j in range(0, i):
             if (a_obj_in[i]['mr'] == a_obj_in[j]['mr']) and \
                (a_obj_in[i]['txt'] == a_obj_in[j]['txt']):
-               a_obj_in[i]['remarks'] = 'dupulicate of '+str(a_obj_in[i]['id'])
+               a_obj_in[i]['remarks'] = 'duplicate of '+str(a_obj_in[j]['id'])
+               break
     return a_obj_in
 
 ## main function
