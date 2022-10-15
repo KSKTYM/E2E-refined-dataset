@@ -905,12 +905,12 @@ def filter_typo(obj, verbose_flag):
         obj['mr']['near'] = 'crowne plaza hotel'
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('crown ', 'crowne ')
-        dump_proc('(e-1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-1)', value_old, obj['txt'], verbose_flag)
     '''        
     if ('crown plaza hotel' in obj['txt']):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('crown plaza', 'crowne plaza')
-        dump_proc('(e-1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-1)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_e2:
         if (word+'s ' in obj['txt']) or \
@@ -921,58 +921,58 @@ def filter_typo(obj, verbose_flag):
            (word+'s?' in obj['txt']):
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word+'s', word)
-            dump_proc('(e-2)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (e-2)', value_old, obj['txt'], verbose_flag)
 
     if 'cotton' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('cotton', 'cotto')
-        dump_proc('(e-3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_e4:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'fitzbillies')
-            dump_proc('(e-4)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (e-4)', value_old, obj['txt'], verbose_flag)
 
     if 'golden city' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('golden city', 'golden curry')
-        dump_proc('(e-5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-5)', value_old, obj['txt'], verbose_flag)
 
     if 'raja cuisine' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('raja cuisine', 'raja indian cuisine')
-        dump_proc('(e-6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-6)', value_old, obj['txt'], verbose_flag)
 
     if 'cafe brazilian' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('cafe brazilian', 'cafe brazil')
-        dump_proc('(e-7)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-7)', value_old, obj['txt'], verbose_flag)
 
     if 'yippee noodle bart' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('yippee noodle bart', 'yippee noodle bar')
-        dump_proc('(e-8)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-8)', value_old, obj['txt'], verbose_flag)
 
     if 'cafe sicilian' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('cafe sicilian', 'cafe sicilia')
-        dump_proc('(e-9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-9)', value_old, obj['txt'], verbose_flag)
 
     if 'st john\'s college' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('st john', 'st. john')
-        dump_proc('(e-10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-10)', value_old, obj['txt'], verbose_flag)
 
     if 'raja located' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('raja located', 'raja indian cuisine located')
-        dump_proc('(e-11)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-11)', value_old, obj['txt'], verbose_flag)
 
     if 'golden palace. n.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('golden palace. n.', 'golden palace.')
-        dump_proc('(e-12)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (e-12)', value_old, obj['txt'], verbose_flag)
 
     ## numbers
     value_old = obj['txt']
@@ -1034,870 +1034,870 @@ def filter_typo(obj, verbose_flag):
     if 'with a out of 5 rating' in obj['txt']:
         obj['txt'] = obj['txt'].replace('with a out of 5 rating', 'with 1 out of 5 rating')
 
-    dump_proc('(n-1)', value_old, obj['txt'], verbose_flag)
+    dump_proc('[typo] (n-1)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_n2:
         if word in obj['txt']:
             value_old = obj['txt']
             new_word_n2 = word.replace('5', '5 ')
             obj['txt'] = obj['txt'].replace(word, new_word_n2)
-            dump_proc('(n-2)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (n-2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_n3:
         if 'then ' + word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('then ', 'than ')
-            dump_proc('(n-3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (n-3)', value_old, obj['txt'], verbose_flag)
 
     if '30and' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('30and', '30 and')
-        dump_proc('(n-4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-4)', value_old, obj['txt'], verbose_flag)
 
     if '$and' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('$and', '$30 and')
-        dump_proc('(n-5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-5)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_n6:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, '$30')
-            dump_proc('(n-6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (n-6)', value_old, obj['txt'], verbose_flag)
 
     if 'or5' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('or5', 'of 5')
-        dump_proc('(n-7)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-7)', value_old, obj['txt'], verbose_flag)
 
     if '.6.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('.6.', '.')
-        dump_proc('(n-8)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-8)', value_old, obj['txt'], verbose_flag)
 
     if 'rating3' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('rating3', 'rating 3')
-        dump_proc('(n-9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-9)', value_old, obj['txt'], verbose_flag)
 
     if 'a1' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('a1', 'a 1')
-        dump_proc('(n-10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-10)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_n11:
         if word+' start ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word+' start ', word+' star ')
-            dump_proc('(n-11)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (n-11)', value_old, obj['txt'], verbose_flag)
 
     if '5 tars' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('5 tars', '5 stars')
-        dump_proc('(n-12)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-12)', value_old, obj['txt'], verbose_flag)
 
     if 'more than french 30' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('more than french 30', 'more than 30')
-        dump_proc('(n-13)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-13)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_n14:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'less than 20')
-            dump_proc('(n-14)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (n-14)', value_old, obj['txt'], verbose_flag)
 
     if 'price is than $20' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('price is than $20', 'price is less than $20')
-        dump_proc('(n-15)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-15)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_n16:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'less than $20')
-            dump_proc('(n-16)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (n-16)', value_old, obj['txt'], verbose_flag)
 
     if 'for less.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('for less.', 'for less than $20.')
-        dump_proc('(n-17)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-17)', value_old, obj['txt'], verbose_flag)
 
     if 'rating it a ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('rating it a ', 'rating it as ')
-        dump_proc('(n-18)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-18)', value_old, obj['txt'], verbose_flag)
 
     if '2 out of 3 price rated' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('2 out of 3 price rated', '3 out of 5 rated')
-        dump_proc('(n-19)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-19)', value_old, obj['txt'], verbose_flag)
 
     if ' to5' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' to5', ' to 5')
-        dump_proc('(n-20)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (n-20)', value_old, obj['txt'], verbose_flag)
 
     ## other typos
     if ' s ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' s ', ' a ')
-        dump_proc('(t-a1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a1)', value_old, obj['txt'], verbose_flag)
 
     if ' am ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' am ', ' an ')
-        dump_proc('(t-a2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a2)', value_old, obj['txt'], verbose_flag)
 
     if ' ad average ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' ad average ', ' an average ')
-        dump_proc('(t-a3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ta4:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word,  ' and ')
-            dump_proc('(t-a4)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-a4)', value_old, obj['txt'], verbose_flag)
 
     if 'and re not' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('and re not', 'and are not')
-        dump_proc('(t-a5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a5)', value_old, obj['txt'], verbose_flag)
 
     if ' a has ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' a has ', ' and has ')
-        dump_proc('(t-a6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a6)', value_old, obj['txt'], verbose_flag)
 
     if 'an dis not' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('an dis not', 'and is not')
-        dump_proc('(t-a7)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a7)', value_old, obj['txt'], verbose_flag)
 
     if ' ares ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' ares ', ' areas ')
-        dump_proc('(t-a8)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a8)', value_old, obj['txt'], verbose_flag)
 
     if ' y ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' y ', ' at ')
-        dump_proc('(t-a9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a9)', value_old, obj['txt'], verbose_flag)
 
     if ' a t a ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' a t a ', ' at a ')
-        dump_proc('(t-a10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a10)', value_old, obj['txt'], verbose_flag)
 
     if '. and' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('. and', ', and')
-        dump_proc('(t-a11)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a11)', value_old, obj['txt'], verbose_flag)
 
     if 'anon-children' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('anon-children', 'a non-children')
-        dump_proc('(t-a12)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a12)', value_old, obj['txt'], verbose_flag)
 
     if '. aren\'t' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('. aren\'t', ' aren\'t')
-        dump_proc('(t-a13)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a13)', value_old, obj['txt'], verbose_flag)
 
     if 'tall ages' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('tall ages', 'all ages')
-        dump_proc('(t-a14)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-a14)', value_old, obj['txt'], verbose_flag)
 
     if ' e ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' e ', ' be ')
-        dump_proc('(t-b1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-b1)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tb2:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'begin')
-            dump_proc('(t-b2)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-b2)', value_old, obj['txt'], verbose_flag)
 
     if 'besides from' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('besides from', 'beside')
-        dump_proc('(t-b3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-b3)', value_old, obj['txt'], verbose_flag)
 
     if ' cant ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' cant ', ' can\'t ')
-        dump_proc('(t-c1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c1)', value_old, obj['txt'], verbose_flag)
 
     if ' carer ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' carer ', ' care ')
-        dump_proc('(t-c2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tc3:
         if 'centre. '+word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('centre. '+word, 'centre '+word)
-            dump_proc('(t-c3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-c3)', value_old, obj['txt'], verbose_flag)
 
     if 'cheep' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('cheep', 'cheap')
-        dump_proc('(t-c4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c4)', value_old, obj['txt'], verbose_flag)
 
     if 'chines ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('chines ', 'chinese ')
-        dump_proc('(t-c5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c5)', value_old, obj['txt'], verbose_flag)
 
     if ' city city' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' city city', ' city')
-        dump_proc('(t-c6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c6)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tc7:
         if word + ' centre' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'city')
-            dump_proc('(t-c7)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-c7)', value_old, obj['txt'], verbose_flag)
 
     if 'clentele' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('clentele', 'clientele')
-        dump_proc('(t-c8)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c8)', value_old, obj['txt'], verbose_flag)
 
     if 'close by is' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('close by is', 'close by')
-        dump_proc('(t-c9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c9)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tc10:
         if 'close '+ word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('close '+word, 'close to')
-            dump_proc('(t-c10)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-c10)', value_old, obj['txt'], verbose_flag)
 
     if 'coffeehouse' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('coffeehouse', 'coffee house')
-        dump_proc('(t-c11)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c11)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tc12:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'coffee shop')
-            dump_proc('(t-c12)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-c12)', value_old, obj['txt'], verbose_flag)
 
     if 'costumer' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('costumer', 'customer')
-        dump_proc('(t-c13)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c13)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tc14:
         if word + ' after' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word + ' after', word + ' near')
-            dump_proc('(t-c14)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-c14)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tc15:
         for word_post in a_word_tc15_post:
             if ' '+word+'s\" '+word_post in obj['txt']:
                 value_old = obj['txt']
                 obj['txt'] = obj['txt'].replace(' '+word+'s\" ', ' '+word+'\'s ')
-                dump_proc('(t-c15)', value_old, obj['txt'], verbose_flag)
+                dump_proc('[typo] (t-c15)', value_old, obj['txt'], verbose_flag)
 
     if 'customer rating is cheap' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('customer rating is cheap', 'customer rating is low')
-        dump_proc('(t-c16)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c16)', value_old, obj['txt'], verbose_flag)
 
     if 'customer rating it a ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('customer rating it a ', 'customer rating it as ')
-        dump_proc('(t-c17)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c17)', value_old, obj['txt'], verbose_flag)
 
     if 'steve\'s chinese' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('steve\'s chinese', 'chinese')
-        dump_proc('(t-c18)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-c18)', value_old, obj['txt'], verbose_flag)
 
     if 'desert' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('desert', 'dessert')
-        dump_proc('(t-d1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-d1)', value_old, obj['txt'], verbose_flag)
 
     if 'eat t ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('eat t ', 'eat ')
-        dump_proc('(t-e1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-e1)', value_old, obj['txt'], verbose_flag)
 
     if 'en tree' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('en tree', 'entree')
-        dump_proc('(t-e2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-e2)', value_old, obj['txt'], verbose_flag)
 
     if obj['txt'].startswith('es '):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].lstrip('es ')
-        dump_proc('(t-e3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-e3)', value_old, obj['txt'], verbose_flag)
 
     if ' eve though' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' eve though', ' even though')
-        dump_proc('(t-e4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-e4)', value_old, obj['txt'], verbose_flag)
 
     if ' foe ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' foe ', ' for ')
-        dump_proc('(t-f2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-f2)', value_old, obj['txt'], verbose_flag)
 
     if 'rood' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' rood', ' food')
-        dump_proc('(t-f1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-f1)', value_old, obj['txt'], verbose_flag)
 
     if 'fore more' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('fore more', 'for more')
-        dump_proc('(t-f3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-f3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tf4:
         if word+' it\'s' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word+' it\'s', word+' its')
-            dump_proc('(t-f4)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-f4)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tf5:
         if word + '$' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word + '$' , word + ' $')
-            dump_proc('(t-f5)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-f5)', value_old, obj['txt'], verbose_flag)
 
     if 'friend;y' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('friend;y', 'friendly')
-        dump_proc('(t-f6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-f6)', value_old, obj['txt'], verbose_flag)
 
     if 'fast found' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('fast found', 'fast food')
-        dump_proc('(t-f7)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-f7)', value_old, obj['txt'], verbose_flag)
 
     if 'grate' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('grate', 'great')
-        dump_proc('(t-g1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-g1)', value_old, obj['txt'], verbose_flag)
 
     if 'hamgurgers' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('hamgurgers', 'hamburgers')
-        dump_proc('(t-h1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-h1)', value_old, obj['txt'], verbose_flag)
 
     if 'ha ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('ha ', 'has ')
-        dump_proc('(t-h2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-h2)', value_old, obj['txt'], verbose_flag)
 
     if '\'s has' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('\'s has', ' has')
-        dump_proc('(T-h3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (T-h3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_th4:
         if word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word+' ', 'high ')
-            dump_proc('(t-h4)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-h4)', value_old, obj['txt'], verbose_flag)
 
     if ' n ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' n ', ' in ')
-        dump_proc('(t-i1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i1)', value_old, obj['txt'], verbose_flag)
 
     if ' ina ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' ina ', ' in a ')
-        dump_proc('(t-i2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ti3:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' indian ')
-            dump_proc('(t-i3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-i3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ti4:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word,  'in the')
-            dump_proc('(t-i4)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-i4)', value_old, obj['txt'], verbose_flag)
 
     if obj['txt'].startswith('n the'):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('n the', 'in the')
-        dump_proc('(t-i5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i5)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ti6:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' '+'is'+' ')
-            dump_proc('(t-i6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-i6)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ti7:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' it ')
-            dump_proc('(t-i7)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-i7)', value_old, obj['txt'], verbose_flag)
 
     if 'next to it is' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('next to it is', 'it is next to')
-        dump_proc('(t-i8)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i8)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ti9:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' it is ')
-            dump_proc('(t-i9)', value_old, obj['txt'], verbose_flag)        
+            dump_proc('[typo] (t-i9)', value_old, obj['txt'], verbose_flag)
 
     if ' t offers' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' t offers', ' it offers')
-        dump_proc('(t-i10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i10)', value_old, obj['txt'], verbose_flag)
 
     if 'thats ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('thats ', 'its ')
-        dump_proc('(t-i11)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i11)', value_old, obj['txt'], verbose_flag)
 
     if 'it\'s neighbour' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('it\'s neighbour', 'its neighbour')
-        dump_proc('(t-i12)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i12)', value_old, obj['txt'], verbose_flag)
 
     if ' it\" ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' it\" ', ' it\'s ')
-        dump_proc('(t-i13)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-i13)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ti14:
         if 'its '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('its '+word+' ', 'it\'s '+word+' ')
-            dump_proc('(t-i14)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-i14)', value_old, obj['txt'], verbose_flag)
 
     if 'kid\'s friendly' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('kid\'s', 'kids')
-        dump_proc('(t-k1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-k1)', value_old, obj['txt'], verbose_flag)
 
     if 'kind friendly' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('kind', 'kid')
-        dump_proc('(t-k2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-k2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tl1:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'less')
-            dump_proc('(t-l1)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-l1)', value_old, obj['txt'], verbose_flag)
 
     if 'lets go' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('lets go', 'let\'s go')
-        dump_proc('(t-l2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-l2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tl3:
         if 'located ' + word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('located '+word, 'located at')
-            dump_proc('(t-l3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-l3)', value_old, obj['txt'], verbose_flag)
 
     if 'locate din' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('locate din', 'located in')
-        dump_proc('(t-l4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-l4)', value_old, obj['txt'], verbose_flag)
 
     if 'located new' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('located new', 'located near')
-        dump_proc('(t-l5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-l5)', value_old, obj['txt'], verbose_flag)
 
     if 'lover that' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('lover that', 'lower than')
-        dump_proc('(t-l6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-l6)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tl7:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' low ')
-            dump_proc('(t-l7)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-l7)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tl8:
         if word+' that' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word+' that', word+' than')
-            dump_proc('(t-l8)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-l8)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tl9:
         if word + ' besides' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word + ' besides', word + ' beside')
-            dump_proc('(t-l9)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-l9)', value_old, obj['txt'], verbose_flag)
 
     if 'lower $20' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('lower $20', 'lower than $20')
-        dump_proc('(t-l10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-l10)', value_old, obj['txt'], verbose_flag)
 
     if 'moder ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('moder ', 'moderate ')
-        dump_proc('(t-m1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-m1)', value_old, obj['txt'], verbose_flag)
 
     if 'more then ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('more then', 'more than')
-        dump_proc('(t-m2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-m2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tm3:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' more ')
-            dump_proc('(t-m3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-m3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tn1:
         if ' ' + word + ' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'near')
-            dump_proc('(t-n1)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-n1)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tn2:
         if 'near '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('near '+word+' ', 'near the ')
-            dump_proc('(t-n2)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-n2)', value_old, obj['txt'], verbose_flag)
 
     if 'near yo ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('near yo ', 'near to ')
-        dump_proc('(t-n3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-n3)', value_old, obj['txt'], verbose_flag)
 
     if 'nested' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('nested', 'nestled')
-        dump_proc('(t-n4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-n4)', value_old, obj['txt'], verbose_flag)
 
     if 'located next' in obj['txt']:
         loc = obj['txt'].find('located next')
         if obj['txt'][loc:].startswith('located next to') is False:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('located next', 'located next to')
-            dump_proc('(t-n5)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-n5)', value_old, obj['txt'], verbose_flag)
 
     a_word_tn6 = ['mot', 'no t', 't not']
     for word in a_word_tn6:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' not ')
-            dump_proc('(t-n6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-n6)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_to1:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' of ')
-            dump_proc('(t-o1)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-o1)', value_old, obj['txt'], verbose_flag)
 
     if ' don ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' don ', ' on ')
-        dump_proc('(t-o2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-o2)', value_old, obj['txt'], verbose_flag)
 
     if 'out ff' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('out ff', 'out of')
-        dump_proc('(t-o3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-o3)', value_old, obj['txt'], verbose_flag)
 
     if 'one-one' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('one-one', 'one')
-        dump_proc('(t-o4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-o4)', value_old, obj['txt'], verbose_flag)
 
     if ' lace' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' lace', ' place')
-        dump_proc('(t-p1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-p1)', value_old, obj['txt'], verbose_flag)
 
     if 'play to' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('play to', 'place to')
-        dump_proc('(t-p2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-p2)', value_old, obj['txt'], verbose_flag)
 
     if 'ponds' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('ponds', 'pounds')
-        dump_proc('(t-p3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-p3)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tp4:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'price')
-            dump_proc('(t-p4)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-p4)', value_old, obj['txt'], verbose_flag)
 
     if 'pried' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('pried', 'priced')
-        dump_proc('(t-p5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-p5)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tp6:
         if 'price '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('price '+word+' ', 'price range ')
-            dump_proc('(t-p6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-p6)', value_old, obj['txt'], verbose_flag)
         if 'price '+word+',' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('price '+word+',', 'price range,')
-            dump_proc('(t-p6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-p6)', value_old, obj['txt'], verbose_flag)
         if 'price '+word+'ing' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('price '+word+'ing', 'price ranging')
-            dump_proc('(t-p6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-p6)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tp7:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word,  ' pub ')
-            dump_proc('(t-p7)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-p7)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tp8:
         if word+'pe ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word+'pe ', word+' ')
-            dump_proc('(t-p8)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-p8)', value_old, obj['txt'], verbose_flag)
 
     if 'pup,' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('pup,', 'pub,')
-        dump_proc('(t-p9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-p9)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tr1:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ',  ' range ')
-            dump_proc('(t-r1)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-r1)', value_old, obj['txt'], verbose_flag)
 
     if ' ran.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' ran.', ' range.')
-        dump_proc('(t-r2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tr3:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word,  ' rating')
-            dump_proc('(t-r3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-r3)', value_old, obj['txt'], verbose_flag)
 
     if 'rating g of' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('rating g of', 'rating of')
-        dump_proc('(t-r4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r4)', value_old, obj['txt'], verbose_flag)
 
     if 'ratings is ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('ratings is ', 'ratings are ')
-        dump_proc('(t-r5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r5)', value_old, obj['txt'], verbose_flag)
 
     if 'restaurantr ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('restaurantr ', 'restaurant ')
-        dump_proc('(t-r6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r6)', value_old, obj['txt'], verbose_flag)
 
     if 'restaurant and restaurant' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('restaurant and restaurant', 'restaurant and')
-        dump_proc('(t-r7)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r7)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tr8:
         if 'restaurant '+word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace('restaurant '+word, 'restaurant near')
-            dump_proc('(t-r8)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-r8)', value_old, obj['txt'], verbose_flag)
 
     if 'right off of ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('right off of ', 'right off ')
-        dump_proc('(t-r9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r9)', value_old, obj['txt'], verbose_flag)
 
     if ' rive ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' rive ', ' river ')
-        dump_proc('(t-r10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r10)', value_old, obj['txt'], verbose_flag)
 
     if ' rd' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' rd', ' road')
-        dump_proc('(t-r11)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r11)', value_old, obj['txt'], verbose_flag)
 
     if 'rating and.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('rating and.', 'rating.')
-        dump_proc('(t-r12)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r12)', value_old, obj['txt'], verbose_flag)
 
     if 'rating f ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('rating f ', 'rating of ')
-        dump_proc('(t-r13)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r13)', value_old, obj['txt'], verbose_flag)
 
     if 'restaurant l ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('restaurant l ', 'restaurant ')
-        dump_proc('(t-r14)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r14)', value_old, obj['txt'], verbose_flag)
 
     if ' rant.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' rant.', ' range.')
-        dump_proc('(t-r15)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r15)', value_old, obj['txt'], verbose_flag)
 
     if ' rive.' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' rive.', ' river.')
-        dump_proc('(t-r16)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r16)', value_old, obj['txt'], verbose_flag)
 
     if ' price rage' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' price rage', ' price range')
-        dump_proc('(t-r17)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-r17)', value_old, obj['txt'], verbose_flag)
 
     if ' of of ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' of of ', ' of ')
-        dump_proc('(t-s1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-s1)', value_old, obj['txt'], verbose_flag)
 
     if ' sered ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' sered ', ' served ')
-        dump_proc('(t-s2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-s2)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_ts3:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word,  ' serves ')
-            dump_proc('(t-s3)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-s3)', value_old, obj['txt'], verbose_flag)
 
     if 'stake' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('stake', 'steak')
-        dump_proc('(t-s4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-s4)', value_old, obj['txt'], verbose_flag)
 
     if 'swhiched' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('swhiched', 'switched')
-        dump_proc('(t-s5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-s5)', value_old, obj['txt'], verbose_flag)
 
     if 'sushigh ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('sushigh ', 'sushi ')
-        dump_proc('(t-s6)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-s6)', value_old, obj['txt'], verbose_flag)
 
     if 'tale' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('tale', 'take')
-        dump_proc('(t-t1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t1)', value_old, obj['txt'], verbose_flag)
 
     if 'tapa,' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('tapa,', 'tapas,')
-        dump_proc('(t-t2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t2)', value_old, obj['txt'], verbose_flag)
 
     if 'then$20' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('then$20', 'than $20')
-        dump_proc('(t-t3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t3)', value_old, obj['txt'], verbose_flag)
 
     if ' hat ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' hat ', ' that ')
-        dump_proc('(t-t4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t4)', value_old, obj['txt'], verbose_flag)
 
     if ' tat' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(' tat', ' that')
-        dump_proc('(t-t5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t5)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tt6:
         if ' ' + word + ' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' the ')
-            dump_proc('(t-t6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-t6)', value_old, obj['txt'], verbose_flag)
 
     if obj['txt'].startswith('th fast'):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('th fast', 'the fast')
-        dump_proc('(t-t7)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t7)', value_old, obj['txt'], verbose_flag)
 
     if 'theres a' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('theres a', 'there\'s a')
-        dump_proc('(t-t8)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t8)', value_old, obj['txt'], verbose_flag)
 
     if 'theres is' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('theres is', 'there is')
-        dump_proc('(t-t9)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t9)', value_old, obj['txt'], verbose_flag)
 
     if 'thought' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('thought', 'though')
-        dump_proc('(t-t10)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t10)', value_old, obj['txt'], verbose_flag)
 
     if 'to est' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('to est', 'to rest')
-        dump_proc('(t-t11)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t11)', value_old, obj['txt'], verbose_flag)
 
     if 'to expensive' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('to expensive', 'too expensive')
-        dump_proc('(t-t12)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-t12)', value_old, obj['txt'], verbose_flag)
 
     if 'whee' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('whee', 'where')
-        dump_proc('(t-w1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-w1)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tw2:
         if word in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(word, 'which')
-            dump_proc('(t-w2)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-w2)', value_old, obj['txt'], verbose_flag)
 
     if 'whine' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('whine', 'wine')
-        dump_proc('(t-w3)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-w3)', value_old, obj['txt'], verbose_flag)
 
     if 'wit a' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('wit a', 'with a')
-        dump_proc('(t-w4)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-w4)', value_old, obj['txt'], verbose_flag)
 
     if 'wont' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('wont', 'won\'t')
-        dump_proc('(t-w5)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-w5)', value_old, obj['txt'], verbose_flag)
 
     for word in a_word_tw6:
         if ' '+word+' ' in obj['txt']:
             value_old = obj['txt']
             obj['txt'] = obj['txt'].replace(' '+word+' ', ' with ')
-            dump_proc('(t-w6)', value_old, obj['txt'], verbose_flag)
+            dump_proc('[typo] (t-w6)', value_old, obj['txt'], verbose_flag)
 
     if 'yippe ' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('yippe ', 'yippee ')
-        dump_proc('(t-y1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (t-y1)', value_old, obj['txt'], verbose_flag)
 
     ## indefinite articles
     flag = False
@@ -1916,7 +1916,7 @@ def filter_typo(obj, verbose_flag):
         obj['txt'] = a_tmp[0]
         for j in range(1, len(a_tmp)):
             obj['txt'] += ' ' + a_tmp[j]
-        dump_proc('(i-1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (i-1)', value_old, obj['txt'], verbose_flag)
 
     flag = False
     value_old = obj['txt']
@@ -1931,17 +1931,17 @@ def filter_typo(obj, verbose_flag):
         obj['txt'] = a_tmp[0]
         for j in range(1, len(a_tmp)):
             obj['txt'] += ' ' + a_tmp[j]
-        dump_proc('(i-2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (i-2)', value_old, obj['txt'], verbose_flag)
 
     # NAMEs / NEARs
     if (obj['mr']['name'] != '') and (obj['mr']['name']+'s' in obj['txt']):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(obj['mr']['name']+'s', obj['mr']['name'])
-        dump_proc('(j-1)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (j-1)', value_old, obj['txt'], verbose_flag)
     if (obj['mr']['near'] != '') and (obj['mr']['near']+'s' in obj['txt']):
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace(obj['mr']['near']+'s', obj['mr']['near'])
-        dump_proc('(j-2)', value_old, obj['txt'], verbose_flag)
+        dump_proc('[typo] (j-2)', value_old, obj['txt'], verbose_flag)
 
     return obj
 
