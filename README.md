@@ -52,6 +52,14 @@ You can execute these process with one command as
 $ ./EXE-ALL.sh
 ```
 
+## Error Analysis
+```
+$ cd error_analysis
+$ ./EXE-e2e-dataset.sh
+$ ./EXE-cleaned-dataset.sh
+$ ./EXE-enriched-dataset.sh
+```
+
 ## Citing
 If you use this dataset in your work, please cite the following papers:
 ```
