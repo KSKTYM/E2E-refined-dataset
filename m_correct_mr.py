@@ -2899,6 +2899,7 @@ def delexicalisation(a_obj_in):
         if obj['new']['mr']['near'] != '':
             obj['new']['mr_lex']['near'] = 'NEAR'
             obj['new']['txt_lex'] = obj['new']['txt_lex'].replace(obj['new']['mr']['near'], 'NEAR')
+        obj['new']['num_sen'] = obj['new']['txt_lex'].count('.') + obj['new']['txt_lex'].count('?')
         a_obj_out.append(obj)
 
     return a_obj_out
