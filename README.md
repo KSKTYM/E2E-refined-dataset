@@ -4,7 +4,7 @@ This is an refined dataset of the [E2E dataset](https://github.com/tuetschek/e2e
 _Authors: Keisuke Toyama, Katsuhito Sudoh, and Satoshi Nakamura_
 
 ## Download Link
-https://github.com/KSKTYM/E2E-refined-dataset/blob/main/release/e2e_refined_dataset_v0_9_0.zip
+https://github.com/KSKTYM/E2E-refined-dataset/blob/main/release/e2e_refined_dataset_v1_0_0.zip
 
 ## Description
 The E2E dataset is a very popular dataset for MR-to-text.
@@ -81,6 +81,7 @@ K. Toyama, K. Sudoh, and S. Nakamura, "E2E Refined Dataset," arXiv preprint arXi
 
 ## Version
 2022/09/28   version 0.9.0 (prerelease version)
+2022/11/??   version 1.0.0 (initial version)
 
 ## License
 Distributed under the [Creative Common 4.0 Attribution-ShareAlike License (CC4.0-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/).

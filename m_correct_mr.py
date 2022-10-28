@@ -2320,6 +2320,7 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'friendly with @FAMILY@',
         'family restaurant',
         'family coffee shop',
+        'family pub',
         'good place to bring @FAMILY@',
         'has @FAMILY@',
         'ideal for anyone on a @FAMILY@',

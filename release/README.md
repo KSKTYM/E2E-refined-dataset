@@ -30,6 +30,7 @@ K. Toyama, K. Sudoh, and S. Nakamura, "E2E Refined Dataset," arXiv preprint arXi
 
 ## Version
 2022/09/28   version 0.9.0 (prerelease version)
+2022/11/??   version 1.0.0 (initial version)
 
 ## License
 Distributed under the [Creative Common 4.0 Attribution-ShareAlike License (CC4.0-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/).
