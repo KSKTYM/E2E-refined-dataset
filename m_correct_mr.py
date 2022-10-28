@@ -2320,7 +2320,6 @@ def extract_familyFriendly(obj_new, verbose_flag, mr_old):
         'friendly with @FAMILY@',
         'family restaurant',
         'family coffee shop',
-        'family pub',
         'good place to bring @FAMILY@',
         'has @FAMILY@',
         'ideal for anyone on a @FAMILY@',
@@ -2899,6 +2898,7 @@ def delexicalisation(a_obj_in):
         if obj['new']['mr']['near'] != '':
             obj['new']['mr_lex']['near'] = 'NEAR'
             obj['new']['txt_lex'] = obj['new']['txt_lex'].replace(obj['new']['mr']['near'], 'NEAR')
+        # number of sentence
         obj['new']['num_sen'] = obj['new']['txt_lex'].count('.') + obj['new']['txt_lex'].count('?')
         a_obj_out.append(obj)
 
