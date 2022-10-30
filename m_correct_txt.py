@@ -642,6 +642,30 @@ def filter_normalise(txt, txt_flag, verbose_flag):
             txt = txt.replace(' ;', ';')
             dump_proc('(norm28)', txt_old, txt, verbose_flag)
 
+    # normalise29 ', ,', ',,'
+    if txt_flag is True:
+        if (', ,') in txt:
+            txt_old = txt
+            txt = txt.replace(', ,', ',')
+            dump_proc('(norm29)', txt_old, txt, verbose_flag)
+        if (',,') in txt:
+            txt_old = txt
+            txt = txt.replace(',,', ',')
+            dump_proc('(norm29)', txt_old, txt, verbose_flag)
+
+    # normalise30 ':' ';' w/o space
+    if txt_flag is True:
+        loc_colon = txt.find(':')
+        if loc_colon >= 0 and txt[loc_colon+1] != ' ':
+            txt_old = txt
+            txt = txt[:loc_colon+1] + ' ' + txt[loc_colon+1:]
+            dump_proc('(norm30)', txt_old, txt, verbose_flag)
+        loc_semicolon = txt.find(';')
+        if loc_semicolon >= 0 and txt[loc_semicolon+1] != ' ':
+            txt_old = txt
+            txt = txt[:loc_semicolon+1] + ' ' + txt[loc_semicolon+1:]
+            dump_proc('(norm30)', txt_old, txt, verbose_flag)
+
     return txt
 
 ## (5-B) typo
@@ -695,7 +719,7 @@ def filter_typo(obj, verbose_flag):
     # t-a6) correct: and has, wrong: a has
     # t-a7) correct: and is not, wrong: an dis not
     # t-a8) correct: areas, wrong: ares
-    # t-a9) correct: at, wrong: y (?)
+    # t-a9) correct: (offered) at, wrong: (offered) y (?)
     # t-a10) correct: at a, wrong: a t a
     # t-a11) correct: ', and', wrong: '. and'
     # t-a12) correct: a non-children, wrong: anon-children
@@ -1180,9 +1204,9 @@ def filter_typo(obj, verbose_flag):
         obj['txt'] = obj['txt'].replace(' ares ', ' areas ')
         dump_proc('[typo] (t-a8)', value_old, obj['txt'], verbose_flag)
 
-    if ' y ' in obj['txt']:
+    if 'offered y ' in obj['txt']:
         value_old = obj['txt']
-        obj['txt'] = obj['txt'].replace(' y ', ' at ')
+        obj['txt'] = obj['txt'].replace('offered y ', 'offered at ')
         dump_proc('[typo] (t-a9)', value_old, obj['txt'], verbose_flag)
 
     if ' a t a ' in obj['txt']:
@@ -1378,6 +1402,10 @@ def filter_typo(obj, verbose_flag):
     if 'friend;y' in obj['txt']:
         value_old = obj['txt']
         obj['txt'] = obj['txt'].replace('friend;y', 'friendly')
+        dump_proc('[typo] (t-f6)', value_old, obj['txt'], verbose_flag)
+    if 'friend; y' in obj['txt']:
+        value_old = obj['txt']
+        obj['txt'] = obj['txt'].replace('friend; y', 'friendly')
         dump_proc('[typo] (t-f6)', value_old, obj['txt'], verbose_flag)
 
     if 'fast found' in obj['txt']:
