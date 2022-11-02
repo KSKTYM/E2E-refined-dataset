@@ -3,9 +3,6 @@ This is an refined dataset of the [E2E dataset](https://github.com/tuetschek/e2e
 
 _Authors: Keisuke Toyama, Katsuhito Sudoh, Satoshi Nakamura_
 
-## Download Link
-https://github.com/KSKTYM/E2E-refined-dataset/blob/main/release/e2e_refined_dataset_v1_0_0.zip
-
 ## Description
 The E2E dataset is a very popular dataset for MR-to-text.
 The dataset consists of a set of pairs of a British English sentence and a corresponding MR in a restaurant recommendation domain.
@@ -18,13 +15,17 @@ We also provided the following additional annotations:
 2) "Number of sentences" (num_sen): the number of sentences included in the text part
 3) "Sentence indexes" (idx_sen): an index of sentences that include the corresponding MR values
 
-## Development Environment
+## Dataset
+https://github.com/KSKTYM/E2E-refined-dataset/blob/main/release/e2e_refined_dataset_v1_0_0.zip
+
+## Python Programs
+### Development Environment
 - OS
   + Ubuntu 20.04
 - Python
   + 3.8.10
 
-## Usage
+### Usage
 1) download the E2E dataset
 ```
 $ ./EXE0-GET-E2E-DATASET.sh
@@ -55,7 +56,7 @@ You can execute these process with one command as
 $ ./EXE-ALL.sh
 ```
 
-## Error Analysis
+### Error Analysis
 ```
 $ cd error_analysis
 $ ./EXE-e2e-dataset.sh
