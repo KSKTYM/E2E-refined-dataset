@@ -1,16 +1,17 @@
 # E2E refined dataset
 This is an refined dataset of the [E2E dataset](https://github.com/tuetschek/e2e-dataset/releases/download/v1.0.0/e2e-dataset.zip).
 
-_Authors: Keisuke Toyama, Katsuhito Sudoh, and Satoshi Nakamura_
+_Authors: Keisuke Toyama, Katsuhito Sudoh, Satoshi Nakamura_
 
 ## Download Link
 https://github.com/KSKTYM/E2E-refined-dataset/blob/main/release/e2e_refined_dataset_v1_0_0.zip
 
 ## Description
 The E2E dataset is a very popular dataset for MR-to-text.
+The dataset consists of a set of pairs of a British English sentence and a corresponding MR in a restaurant recommendation domain.
 However, some of the MR-text pairs suffer from the following errors: "deletion" (an MR is not reflected in the text), "insertion" (an MR whose value is empty appears in the text with an unintended value), and "substitution" (an MR value is replaced in the text).
-Since such errors affet the quality of MR-to-text systems, they must be fixed as much as possible.
-Therefore, we developed a refined dataset and some python programmes that convert the original E2E dataset into a refined dataset.
+Since such errors affect the quality of MR-to-text systems, they must be fixed as much as possible.
+Therefore, we developed a refined dataset and some python programs that convert the original E2E dataset into a refined dataset.
 
 We also provided the following additional annotations:
 1) "MR order" (order): the order of the mentions of MR values in corresponding sentences
@@ -65,7 +66,7 @@ $ ./EXE-enriched-dataset.sh
 ## Citing
 If you use this dataset in your work, please cite the following papers:
 ```
-K. Toyama, K. Sudoh, and S. Nakamura, "E2E Refined Dataset," arXiv preprint arXiv:22XX.XXXXX, 2022 (to be appeared)
+K. Toyama, K. Sudoh, and S. Nakamura, "E2E Refined Dataset," arXiv preprint arXiv:2211.00513, 2022
 
 @inproceedings{novikova2017e2e,
   title={The {E2E} Dataset: New Challenges for End-to-End Generation},
@@ -80,8 +81,9 @@ K. Toyama, K. Sudoh, and S. Nakamura, "E2E Refined Dataset," arXiv preprint arXi
 ```
 
 ## Version
-2022/09/28   version 0.9.0 (prerelease version)
-2022/11/??   version 1.0.0 (initial version)
+- 2022/07/14   version 0.8.0
+- 2022/09/28   version 0.9.0 (prerelease version)
+- 2022/11/01   version 1.0.0 (initial version)
 
 ## License
 Distributed under the [Creative Common 4.0 Attribution-ShareAlike License (CC4.0-BY-SA)](https://creativecommons.org/licenses/by-sa/4.0/).
