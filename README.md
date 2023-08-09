@@ -67,8 +67,6 @@ $ ./EXE-enriched-dataset.sh
 ## Citing
 If you use this dataset in your work, please cite the following papers:
 ```
-K. Toyama, K. Sudoh, and S. Nakamura, "E2E Refined Dataset," arXiv preprint arXiv:2211.00513, 2022
-
 @inproceedings{novikova2017e2e,
   title={The {E2E} Dataset: New Challenges for End-to-End Generation},
   author={Novikova, Jekaterina and Du{\v{s}}ek, Ondrej and Rieser, Verena},
